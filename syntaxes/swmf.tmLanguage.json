@@ -3,6 +3,9 @@
 	"name": "SWMF Config",
 	"patterns": [
 		{
+			"include": "#comment"
+		},
+		{
 			"include": "#marker"
 		},
 		{
@@ -16,15 +19,27 @@
 		}
 	],
 	"repository": {
+		"comment": {
+			"name":"comment.swmf",
+			"match": "^[^#].*\n"
+		},
 		"command": {
 			"patterns": [{
-				"match": "^(#[a-zA-Z0-9_]+)(\\s.*)?\n"
+				"name":"cat.comment.swmf",
+				"begin": "^(#[a-zA-Z0-9_]+)(\\s.*)?\n",
+				"end": "(?=(^\\s*\n|^#.*\n))"
 				,
-				"captures": 
+				"beginCaptures": 
 				{
 					"1" : {"name" : "support.function.swmf" },
 					"2" : {"name" : "comment.swmf"}
-				}
+				},
+				"patterns": [
+					{"include": "#param-integer"}, 
+					{"include": "#param-float"}, 
+					{"include": "#param-boolean"}, 
+					{"include": "#param-string"}
+				]
 			}]
 		},
 		"marker": {
@@ -32,7 +47,7 @@
 				"match": "^(#(?:BEGIN|END)_COMP) ([A-Z][A-Z])(\\s.*)?\n",
 				"captures": 
 				{
-					"1" : {"name" : "support.function.swmf"},
+					"1" : {"name" : "entity.name.function.subroutine.swmf"},
 					"2" : {"name" : "string.swmf"},
 					"3" : {"name" : "comment.swmf"}
 				}
@@ -49,16 +64,33 @@
 				}
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.swmf",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.swmf",
-					"match": "\\\\."
-				}
-			]
+		"param-float": {
+			"match": "^ ?([+-]?(?=\\.\\d|\\d)(?:0|[1-9]\\d*)?(?:\\.\\d*)?(?:\\d[eE][+-]?\\d+)?)(\\s.*)?\n",
+			"captures": {
+				"1" : {"name" : "constant.numeric.integer.swmf" },
+				"2" : {"name" : "comment.swmf"}
+			}	
+		},
+		"param-integer": {
+			"match": "^ ?([+-]?[0-9]+)(\\s.*)?\n",
+			"captures": {
+				"1" : {"name" : "constant.numeric.integer.swmf" },
+				"2" : {"name" : "comment.swmf"}
+			}	
+		},
+		"param-boolean": {
+			"match": "^ ?((?:\\.true\\.|\\.false\\.|T|F))(\\s.*)?\n",
+			"captures": {
+				"1" : {"name" : "constant.language.swmf" },
+				"2" : {"name" : "comment.swmf"}
+			}	
+		},
+		"param-string": {
+			"match": "^ ?((?:\\S+ ? ?)*)(\\s.*)?\n",
+			"captures": {
+				"1" : {"name" : "string.swmf" },
+				"2" : {"name" : "comment.swmf"}
+			}	
 		}
 	},
 	"scopeName": "source.swmf"
