@@ -3,17 +3,50 @@
 	"name": "SWMF Config",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#marker"
+		},
+		{
+			"include": "#run_end"
+		},
+		{
+			"include": "#command"
 		},
 		{
 			"include": "#strings"
 		}
 	],
 	"repository": {
-		"keywords": {
+		"command": {
 			"patterns": [{
-				"name": "keyword.control.swmf",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "^(#[a-zA-Z0-9_]+)(\\s.*)?\n"
+				,
+				"captures": 
+				{
+					"1" : {"name" : "support.function.swmf" },
+					"2" : {"name" : "comment.swmf"}
+				}
+			}]
+		},
+		"marker": {
+			"patterns": [{
+				"match": "^(#(?:BEGIN|END)_COMP) ([A-Z][A-Z])(\\s.*)?\n",
+				"captures": 
+				{
+					"1" : {"name" : "support.function.swmf"},
+					"2" : {"name" : "string.swmf"},
+					"3" : {"name" : "comment.swmf"}
+				}
+			}]
+		},
+		"run_end": {
+			"patterns": 
+			[{
+				"match": "(^#(?:RUN|END))(\\s.*)?\n",
+				"captures": 
+				{
+					"1" : {"name" : "keyword.swmf" },
+					"2" : {"name" : "comment.swmf"}
+				}
 			}]
 		},
 		"strings": {
