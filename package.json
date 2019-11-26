@@ -1,0 +1,25 @@
+{
+    "name": "swmf",
+    "displayName": "swmf",
+    "description": "SWMF Configuration",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.40.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "swmf",
+            "aliases": ["SWMF Config", "swmf"],
+            "extensions": [".in",".IN"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "swmf",
+            "scopeName": "source.swmf",
+            "path": "./syntaxes/swmf.tmLanguage.json"
+        }]
+    }
+}
