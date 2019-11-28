@@ -1,14 +1,14 @@
 Highlighting demo using Monokai dark theme.
 
-#COMMAND Example command with parameters.      
+#BEGIN_COMP SC  Marker with folding button in margin
+
+#COMMAND Example command with parameters      
 -10            integer parameter
 +1.1e6         float parameter
 T              Boolean parameter
 Hello  World   string parameter
 
-#BEGIN_COMP SC  Marker and component ID
-
-COMMAND  Commands lacking the # characters are comments. 
+COMMAND  Commands lacking the # character are comments 
 15
 
 #END_COMP SC  End marker and component ID
