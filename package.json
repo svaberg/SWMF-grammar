@@ -1,7 +1,7 @@
 {
-    "name": "swmf",
-    "displayName": "swmf",
-    "description": "SWMF Configuration",
+    "name": "swmf-grammar",
+    "displayName": "swmf-grammar",
+    "description": "SWMF Configuration grammar for VS Code",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.40.0"
