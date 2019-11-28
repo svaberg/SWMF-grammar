@@ -1,0 +1,5 @@
+.vscode/
+.vscodeignore
+node_modules/
+package-lock.json
+*.vsix

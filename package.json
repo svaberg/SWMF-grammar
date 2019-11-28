@@ -3,6 +3,10 @@
     "displayName": "swmf-grammar",
     "description": "SWMF Configuration grammar for VS Code",
     "version": "0.0.1",
+    "publisher": "svaberg",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/svaberg/SWMF-grammar"},
     "engines": {
         "vscode": "^1.40.0"
     },
@@ -10,16 +14,29 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "swmf",
-            "aliases": ["SWMF Config", "swmf"],
-            "extensions": [".in",".IN"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "swmf",
-            "scopeName": "source.swmf",
-            "path": "./syntaxes/swmf.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "swmf-config",
+                "aliases": [
+                    "SWMF Config",
+                    "swmf"
+                ],
+                "extensions": [
+                    ".in",
+                    ".IN"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "swmf-config",
+                "scopeName": "source.swmf",
+                "path": "./syntaxes/swmf.tmLanguage.json"
+            }
+        ]
+    },
+    "dependencies": {
+        "vsce": "^1.69.0"
     }
 }
