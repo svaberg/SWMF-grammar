@@ -6,12 +6,17 @@
     "publisher": "svaberg",
     "repository": {
         "type": "git",
-        "url": "https://github.com/svaberg/SWMF-grammar"},
+        "url": "https://github.com/svaberg/SWMF-grammar"
+    },
     "engines": {
         "vscode": "^1.40.0"
     },
     "categories": [
         "Programming Languages"
+    ],
+    "main": "./out/extension.js",
+    "activationEvents": [
+        "onLanguage:swmf-config"
     ],
     "contributes": {
         "languages": [
@@ -36,7 +41,16 @@
             }
         ]
     },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile",
+        "test": "node ./out/test/runTest.js"
+    },
     "dependencies": {
-        "vsce": "^1.69.0"
+        "tsc": "^1.20150623.0",
+        "vsce": "^1.69.0",
+        "vscode-languageclient": "^5.1.0"
     }
 }
