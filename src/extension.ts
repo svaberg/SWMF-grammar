@@ -16,6 +16,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider {
 
+    private format(cmd: string):string{
+        return cmd.substr(1).toLowerCase().replace(/^\w/, c => c.toUpperCase())
+    }
+
     public provideDocumentSymbols(
         document: vscode.TextDocument,
         token: vscode.CancellationToken): Promise<vscode.DocumentSymbol[]> 
@@ -26,16 +30,23 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
             let nodes = [symbols]
             let inside_marker = false
             let inside_run = false
-            let inside_cmd = false
+            let inside_userinput = false
+
+            let symbolkind_marker = vscode.SymbolKind.Field
+            let symbolkind_run = vscode.SymbolKind.Event
+            let symbolkind_cmd = vscode.SymbolKind.Function
 
             for (var i = 0; i < document.lineCount; i++) {
                 var line = document.lineAt(i);
 
+                let tokens = line.text.split(" ")
+
                 if (line.text.startsWith("#BEGIN_COMP")) {
+
                     let marker_symbol = new vscode.DocumentSymbol(
-                        line.text.substr(1,13),
-                        'Marker',
-                        vscode.SymbolKind.Class,
+                        this.format(tokens[0]) + " " + tokens[1],
+                        'Component',
+                        symbolkind_marker,
                         line.range, line.range)
 
 
@@ -54,10 +65,11 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
                     }
                 }
                 else if (line.text.startsWith("#RUN") || line.text.startsWith("#END")) {
+                    
                     let run_symbol = new vscode.DocumentSymbol(
-                        line.text.substr(1,4),
-                        'Session',
-                        vscode.SymbolKind.Subroutine,
+                        this.format(tokens[0]),
+                        'Session separator',
+                        symbolkind_run,
                         line.range, line.range)
 
                     if (inside_run) {
@@ -68,23 +80,40 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
                     nodes.push(run_symbol.children)
                     inside_run = true
                 }
-                else if (line.text.startsWith("#")) {
-                    let marker_symbol = new vscode.DocumentSymbol(
-                        line.text.substr(1,13).toLowerCase(),
-                        'Command',
-                        vscode.SymbolKind.Constructor,
+                else if (line.text.startsWith("#USERINPUTBEGIN")) {
+
+                    let user_symbol = new vscode.DocumentSymbol(
+                        this.format(tokens[0]),
+                        'User module',
+                        vscode.SymbolKind.Interface,
                         line.range, line.range)
 
 
-                    nodes[nodes.length-1].push(marker_symbol)
-                    // nodes.push(marker_symbol.children)
+                    nodes[nodes.length-1].push(user_symbol)
+                    if (!inside_userinput) {
+                        nodes.push(user_symbol.children)
+                        inside_userinput = true
+                    }
                     // marker_symbol.children.push(_boot)
-                    inside_cmd = true
+                }
+                else if (line.text.startsWith("#USERINPUTEND")) {
+                    // TODO check if nodes has length 1 before popping.
+                    if (inside_userinput) {
+                        nodes.pop()
+                        inside_userinput = false
+                    }
+                }                
+                else if (line.text.startsWith("#")) {
+                    let cmd_symbol = new vscode.DocumentSymbol(
+                        this.format(tokens[0]),
+                        '',
+                        symbolkind_cmd,
+                        line.range, line.range)
+
+                    nodes[nodes.length-1].push(cmd_symbol)
                 }
             }
 
-            // Need this otherwise the outline view just says
-            // "Loading document symbols for <file>..." forever.
             resolve(symbols);
         });
     }
