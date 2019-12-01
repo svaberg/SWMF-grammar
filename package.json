@@ -48,9 +48,7 @@
         "pretest": "npm run compile",
         "test": "node ./out/test/runTest.js"
     },
-    "dependencies": {
-        "tsc": "^1.20150623.0",
-        "vsce": "^1.69.0",
-        "vscode-languageclient": "^5.1.0"
+    "devDependencies": {
+        "typescript": "^3.7.2"
     }
 }
