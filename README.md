@@ -4,11 +4,14 @@ Syntax highlighting and some code completion for [Space Weather Modelling Framew
 
 Automatically highlights files ending in `.in` and `.IN`.
 
+A document tree is also provided in the outline view.
+
 ![highlight and folding demo](images/highlight-demo.png)
 
 ## Features
 
  * Syntax highlighting 
  * Comment/uncomment using `!` as comment character.
+ * Hierarchical document tree in outline view.
  * Code folding between `#BEGIN_COMP` and `#END_COMP` markers.
  * Autoclosing of `#BEGIN_COMP`.
