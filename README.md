@@ -6,7 +6,7 @@ Automatically highlights files ending in `.in` and `.IN`.
 
 A document tree is also provided in the outline view.
 
-![highlight and folding demo](images/highlight-demo.png)
+![highlight and folding demo](images/demo.png)
 
 ## Features
 
