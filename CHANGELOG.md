@@ -9,5 +9,5 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Initial release with syntax highlighting.
 ### 0.2.0 
 Added hierarchical outline view.
-### 0.2.1 
+### 0.2.2 
 Fixed image in README to reflect new features.
