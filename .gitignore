@@ -2,4 +2,7 @@
 .vscodeignore
 node_modules/
 package-lock.json
+out/
+
+# Ignore built packages
 *.vsix
