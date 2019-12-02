@@ -23,7 +23,7 @@ Automatically highlights files ending in `.in` and `.IN`. For files lacking thes
 
 ## Installation
 
-This is a [Visual Studio Code](https://code.visualstudio.com/download) extension. It is best installed from the [on-line extensions marketplace](https://marketplace.visualstudio.com/items?itemName=svaberg.swmf-grammar), or from inside VS Code `Preferences/Extensions` and search for `swmf-grammar`.
+This is a [Visual Studio Code](https://code.visualstudio.com/download) extension. It is best installed from the [on-line extensions marketplace](https://marketplace.visualstudio.com/items?itemName=svaberg.swmf-grammar), or from inside VS Code: Click on `Preferences/Extensions` and type `swmf-grammar` into the search box.
 
 To test the installation, just open a handy SWMF `PARAM.in` file.
 
