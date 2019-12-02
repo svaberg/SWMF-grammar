@@ -4,7 +4,7 @@
 
 This extension provides syntax highlighting, outline view, breadcrumbs, and some code completion for [Space Weather Modelling Framework (SWMF)](http://csem.engin.umich.edu/tools/swmf/) configuration files, such as the BATSRUS `PARAM.in` file. The rules are based on the [SWMF manual](http://csem.engin.umich.edu/tools/swmf/documentation/SWMF.pdf) section 3.2.2.
 
-Automatically highlights files ending in `.in` and `.IN`.
+Automatically highlights files ending in `.in` and `.IN`. For files lacking these extensions, the language can be set manually via normal VS Code mechanisms.
 
 ![Features demo](images/demo.png)
 
@@ -21,42 +21,6 @@ Automatically highlights files ending in `.in` and `.IN`.
 
 This is a [Visual Studio Code](https://code.visualstudio.com/download) extension. It is best installed from the [on-line extensions marketplace](https://marketplace.visualstudio.com/items?itemName=svaberg.swmf-grammar), or from inside VS Code `Preferences/Extensions` and search for `swmf-grammar`.
 
-Alternatively, the extension can be built and installed manually as in the next section.
+To test the installation, just open a handy SWMF `PARAM.in` file.
 
-### Manual installation from source code
-
-> This should only be required for developers.
-
-1. Clone the repository and enter into the folder
-
-    ```bash
-    git clone git@github.com:svaberg/SWMF-grammar.git
-    cd SWMF-grammar
-    ```
-
-2. Install the required packages with `npm`
-
-    ```bash
-    npm install
-    ```
-
-3. Create a package using `vsce`
-
-    ```bash
-    vsce package
-    ```
-
-    This should generate a `swmf-grammar-?.?.?.vsix` file in the current directory.
-4. Manually install the extension in VS Code (you may want to replace the wildcards in the version number)
-
-    ```bash
-    code --install-extension swmf-grammar-?.?.?.vsix
-    ```
-
-To test the installation, open the current folder in VS Code
-
-```bash
-code .
-```
-
-and view the file `demo.in`.
+Alternatively, the extension can be [built, installed and tested manually](INSTALL.md).

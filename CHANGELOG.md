@@ -17,3 +17,5 @@ Tidy README and clean up `devDependencies`.
 Mention support for [Breadcrumbs](https://code.visualstudio.com/updates/v1_26#_breadcrumbs).
 ### 0.2.5
 Add icon to marketplace.
+### 0.2.6
+Move manual installation instructions to [INSTALL.md](INSTALL.md). Add transparent icon borders.
