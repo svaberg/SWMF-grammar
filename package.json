@@ -17,10 +17,6 @@
         "Formatters"
     ],
     "icon": "images/icon.png",
-    "galleryBanner": {
-        "color": "272822",
-        "theme": "dark"
-    },
     "main": "./out/extension.js",
     "activationEvents": [
         "onLanguage:swmf-config"
