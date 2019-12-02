@@ -19,3 +19,5 @@ Mention support for [Breadcrumbs](https://code.visualstudio.com/updates/v1_26#_b
 Add icon to marketplace.
 ### 0.2.6
 Move manual installation instructions to [INSTALL.md](INSTALL.md). Add transparent icon borders.
+### 0.2.7
+Set banner background to Monokai dark background.
