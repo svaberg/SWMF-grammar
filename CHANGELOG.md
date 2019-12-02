@@ -21,3 +21,6 @@ Add icon to marketplace.
 Move manual installation instructions to [INSTALL.md](INSTALL.md). Add transparent icon borders.
 ### 0.2.7
 Set banner background to Monokai dark background.
+### 0.2.8
+Use default banner background.
+### 0.2.9
