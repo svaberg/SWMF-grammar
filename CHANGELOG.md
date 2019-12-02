@@ -45,3 +45,8 @@ Use default banner background.
 ### 0.2.9
 
 Add badges to README
+
+## [1.0.0] - 2019-12-02
+
+- Tidy README
+- Add license badge
