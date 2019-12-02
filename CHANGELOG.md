@@ -24,3 +24,4 @@ Set banner background to Monokai dark background.
 ### 0.2.8
 Use default banner background.
 ### 0.2.9
+Add badges to README
