@@ -1,6 +1,6 @@
 {
     "name": "swmf-grammar",
-    "displayName": "SWMF Configuration language support",
+    "displayName": "SWMF Configuration",
     "description": "Syntax highlights and outline view for SWMF configuration files",
     "version": "0.2.4",
     "publisher": "svaberg",
@@ -16,6 +16,11 @@
         "Programming Languages",
         "Formatters"
     ],
+    "icon": "images/icon.png",
+    "galleryBanner": {
+      "color": "#C80000",
+      "theme": "dark"
+    },
     "main": "./out/extension.js",
     "activationEvents": [
         "onLanguage:swmf-config"

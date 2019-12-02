@@ -15,3 +15,5 @@ Fixed image in README to reflect new features.
 Tidy README and clean up `devDependencies`.
 ### 0.2.4
 Mention support for [Breadcrumbs](https://code.visualstudio.com/updates/v1_26#_breadcrumbs).
+### 0.2.5
+Add icon to marketplace.
