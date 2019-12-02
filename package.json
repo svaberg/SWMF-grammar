@@ -2,7 +2,7 @@
     "name": "swmf-grammar",
     "displayName": "SWMF Configuration",
     "description": "Syntax highlights and outline view for SWMF configuration files",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "publisher": "svaberg",
     "repository": {
         "type": "git",
@@ -18,8 +18,8 @@
     ],
     "icon": "images/icon.png",
     "galleryBanner": {
-      "color": "#C80000",
-      "theme": "dark"
+        "color": "#C80000",
+        "theme": "dark"
     },
     "main": "./out/extension.js",
     "activationEvents": [
