@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/svaberg/SWMF-grammar.svg?branch=master)](https://travis-ci.com/svaberg/SWMF-grammar)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/svaberg/SWMF-grammar)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > This is a Visual Studio Code extension and should be installed from the [VS Code extensions marketplace](https://marketplace.visualstudio.com/items?itemName=svaberg.swmf-grammar)
 
