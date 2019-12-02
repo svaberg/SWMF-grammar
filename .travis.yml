@@ -4,9 +4,9 @@ node_js:
 os:
   - osx
 before_install:
-- npm install -g typescript
+  - npm install -g typescript
 install:
-  -npm install
+ - npm install
 script:
   - npm run compile
   - npm test
