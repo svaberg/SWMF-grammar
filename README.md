@@ -1,4 +1,5 @@
 # SWMF Configuration
+
 [![Build Status](https://travis-ci.com/svaberg/SWMF-grammar.svg?branch=master)](https://travis-ci.com/svaberg/SWMF-grammar)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/svaberg/SWMF-grammar)
 
