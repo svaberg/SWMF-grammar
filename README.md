@@ -12,6 +12,7 @@ Automatically highlights files ending in `.in` and `.IN`.
 
  * Syntax highlighting 
  * Hierarchical document tree in outline view.
+ * [Breadcrumbs](https://code.visualstudio.com/updates/v1_26#_breadcrumbs) support
  * Toggle comment using `!` as comment character.
  * Code folding between `#BEGIN_COMP` and `#END_COMP` markers.
  * Autoclosing of `#BEGIN_COMP`.

@@ -8,8 +8,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### 0.0.1 
 Initial release with syntax highlighting.
 ### 0.2.0 
-Added hierarchical outline view.
+Added hierarchical [outline view](https://code.visualstudio.com/docs/getstarted/userinterface#_outline-view).
 ### 0.2.2 
 Fixed image in README to reflect new features.
 ### 0.2.3
 Tidy README and clean up `devDependencies`.
+### 0.2.4
+Mention support for [Breadcrumbs](https://code.visualstudio.com/updates/v1_26#_breadcrumbs).

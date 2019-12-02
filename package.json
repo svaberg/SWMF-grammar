@@ -2,7 +2,7 @@
     "name": "swmf-grammar",
     "displayName": "SWMF Configuration language support",
     "description": "Syntax highlights and outline view for SWMF configuration files",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "publisher": "svaberg",
     "repository": {
         "type": "git",
