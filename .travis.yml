@@ -1,7 +1,15 @@
 language: node_js
 node_js:
-- '0.10'
+- '10'
+os:
+  - osx
 before_install:
-- npm install -g typescript@1.0
+- npm install -g typescript
+install:
+  -npm install
 script:
-- npm test
+  - npm run compile
+  - npm test
+notifications:
+  email:
+    on_success: change
