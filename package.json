@@ -47,7 +47,9 @@
     "scripts": {
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./"
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile",
+        "test": ""
     },
     "devDependencies": {
         "typescript": "^3.7.2",
