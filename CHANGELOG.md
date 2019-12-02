@@ -11,3 +11,5 @@ Initial release with syntax highlighting.
 Added hierarchical outline view.
 ### 0.2.2 
 Fixed image in README to reflect new features.
+### 0.2.3
+Tidy README and clean up `devDependencies`.
