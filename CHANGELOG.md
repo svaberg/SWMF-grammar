@@ -50,3 +50,7 @@ Add badges to README
 
 - Tidy README
 - Add license badge
+
+## Not yet released
+
+- Migrate from `vscode` to `vscode-test` [as described on the VS Code site](https://code.visualstudio.com/api/working-with-extensions/testing-extension#migrating-from-vscode).
