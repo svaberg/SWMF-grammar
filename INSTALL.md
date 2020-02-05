@@ -6,8 +6,6 @@ _Alternatively_, the extension can be built and installed manually as in the nex
 
 ## Manual installation from source code
 
-
-
 1. Clone the repository and enter into the folder
 
     ```bash
