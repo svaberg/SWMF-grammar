@@ -1,8 +1,4 @@
-.vscode/
-.vscodeignore
-node_modules/
-package-lock.json
-out/
-
-# Ignore built packages
+out
+node_modules
+.vscode-test/
 *.vsix
