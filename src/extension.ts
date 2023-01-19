@@ -26,24 +26,24 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
         {
         return new Promise((resolve, reject) => 
         {
-            let symbols: vscode.DocumentSymbol[] = [];
-            let nodes = [symbols]
+            const symbols: vscode.DocumentSymbol[] = [];
+            const nodes = [symbols]
             let inside_marker = false
             let inside_run = false
             let inside_userinput = false
 
-            let symbolkind_marker = vscode.SymbolKind.Field
-            let symbolkind_run = vscode.SymbolKind.Event
-            let symbolkind_cmd = vscode.SymbolKind.Function
+            const symbolkind_marker = vscode.SymbolKind.Field
+            const symbolkind_run = vscode.SymbolKind.Event
+            const symbolkind_cmd = vscode.SymbolKind.Function
 
-            for (var i = 0; i < document.lineCount; i++) {
-                var line = document.lineAt(i);
+            for (let i = 0; i < document.lineCount; i++) {
+                const line = document.lineAt(i);
 
-                let tokens = line.text.split(" ")
+                const tokens = line.text.split(" ")
 
                 if (line.text.startsWith("#BEGIN_COMP")) {
 
-                    let marker_symbol = new vscode.DocumentSymbol(
+                    const marker_symbol = new vscode.DocumentSymbol(
                         this.format(tokens[0]) + " " + tokens[1],
                         'Component',
                         symbolkind_marker,
@@ -66,7 +66,7 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
                 }
                 else if (line.text.startsWith("#RUN") || line.text.startsWith("#END")) {
                     
-                    let run_symbol = new vscode.DocumentSymbol(
+                    const run_symbol = new vscode.DocumentSymbol(
                         this.format(tokens[0]),
                         'Session separator',
                         symbolkind_run,
@@ -82,7 +82,7 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
                 }
                 else if (line.text.startsWith("#USERINPUTBEGIN")) {
 
-                    let user_symbol = new vscode.DocumentSymbol(
+                    const user_symbol = new vscode.DocumentSymbol(
                         this.format(tokens[0]),
                         'User module',
                         vscode.SymbolKind.Interface,
@@ -104,7 +104,7 @@ class SwmfConfigDocumentSymbolProvider implements vscode.DocumentSymbolProvider 
                     }
                 }                
                 else if (line.text.startsWith("#")) {
-                    let cmd_symbol = new vscode.DocumentSymbol(
+                    const cmd_symbol = new vscode.DocumentSymbol(
                         this.format(tokens[0]),
                         '',
                         symbolkind_cmd,
