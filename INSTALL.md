@@ -31,7 +31,7 @@ At this point the extension may be debugged in the Extension Development Host:
 code .
 ```
 
-followed by the `Debug/Start Debugging` dropdown (or the `F5` key). To observe the extension in action, view the file `demo.in`.
+followed by the `Run/Start Debugging` dropdown (or the `F5` key). To observe the extension in action, view the file `demo.in`.
 
 To complete the manual installation, follow the remaining steps to manually create and install the package:
 
