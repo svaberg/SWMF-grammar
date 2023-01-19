@@ -51,6 +51,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Tidy README
 - Add license badge
 
-### Not yet released
+## [1.0.1] - 2021-01-19
 
 - Migrate from `vscode` to `vscode-test` [as described on the VS Code site](https://code.visualstudio.com/api/working-with-extensions/testing-extension#migrating-from-vscode).
+- Use more recent version of libraries to avoid security vulnerability found by GitHub's dependabot.
